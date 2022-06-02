@@ -12,18 +12,6 @@
     }
   }
 
-  @media (max-width: 280px){
-    main {
-      height: 100vh;
-      height: -webkit-fill-available;
-      max-height: 100vh;
-      overflow-x: auto;
-      overflow-y: hidden;
-      position: fixed;
-      z-index: 1000;
-    }
-  }
-
   .b-example-divider {
     height: 3rem;
     background-color: rgba(0, 0, 0, .1);

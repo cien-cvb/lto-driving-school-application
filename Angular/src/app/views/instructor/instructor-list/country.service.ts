@@ -37,7 +37,7 @@ function sort(countries: Country[], column: SortColumn, direction: string): Coun
 
 function matches(country: Country, term: string, pipe: PipeTransform) {
   return country.name.toLowerCase().includes(term.toLowerCase())
-    || pipe.transform(country.area).includes(term)
+    || country.area.toLowerCase().includes(term.toLowerCase())
     || pipe.transform(country.population).includes(term);
 }
 
@@ -50,7 +50,7 @@ export class CountryService {
 
   private _state: State = {
     page: 1,
-    pageSize: 4,
+    pageSize: 10,
     searchTerm: '',
     sortColumn: '',
     sortDirection: ''

@@ -19,3 +19,49 @@ th[sortable] {
     transform: rotate(180deg);
     -ms-transform: rotate(180deg);
   }
+
+  .add-button{
+    margin-left: 20px;
+    margin-bottom: 30px;
+  }
+
+  .card-1{
+      border: none;
+      border-radius: 10px;
+      width: 100%;
+      background-color: #fff;
+  }
+
+  .icons i {
+ 
+    margin-left: 20px;
+   
+  }
+
+  .table{
+    color: rgb(62,85,105);
+  }
+
+  .student-form{
+    width: fit-content;
+    height: 100vh;
+    background-color: #f5f5f5;
+    margin: auto;
+    border-radius: 10px;
+  }
+
+  .required-indicator{
+    color: red;
+  }
+
+  hr{
+    color: blue;
+  }
+
+.offcanvas-header{
+  background-color: #2962ff;
+  color: #f5f5f5;
+  border-radius: 10px 10px 0px 0px;
+}
+  
+

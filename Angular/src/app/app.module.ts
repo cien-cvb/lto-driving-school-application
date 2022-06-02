@@ -6,10 +6,13 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './containers/sidebar/sidebar.component';
 import { StudentFormComponent } from './views/student/student-form/student-form.component';
 import { StudentListComponent } from './views/student/student-list/student-list.component';
-import { InstructorFormComponent } from './views/instructor/instructor-form/instructor-form.component';
 import { InstructorListComponent } from './views/instructor/instructor-list/instructor-list.component';
-import { NgbdSortableHeader } from './views/student/student-list/sortable.directive';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DefaultHeaderComponent } from './containers/default-header/default-header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalModule } from "ngx-bootstrap/modal";
+import { CourseListComponent } from './views/course/course-list/course-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,16 +20,18 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SidebarComponent,
     StudentFormComponent,
     StudentListComponent,
-    InstructorFormComponent,
     InstructorListComponent,
-    NgbdSortableHeader, 
-   
+    DefaultHeaderComponent,
+    CourseListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    ModalModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

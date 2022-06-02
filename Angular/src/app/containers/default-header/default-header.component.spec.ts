@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StudentListComponent } from './student-list.component';
+import { DefaultHeaderComponent } from './default-header.component';
 
-describe('StudentListComponent', () => {
-  let component: StudentListComponent;
-  let fixture: ComponentFixture<StudentListComponent>;
+describe('DefaultHeaderComponent', () => {
+  let component: DefaultHeaderComponent;
+  let fixture: ComponentFixture<DefaultHeaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ StudentListComponent ]
+      declarations: [ DefaultHeaderComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StudentListComponent);
+    fixture = TestBed.createComponent(DefaultHeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

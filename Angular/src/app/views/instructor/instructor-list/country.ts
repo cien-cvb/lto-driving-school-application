@@ -1,7 +1,6 @@
 export interface Country {
     id: number;
     name: string;
-    flag: string;
-    area: number;
+    area: string;
     population: number;
 }
