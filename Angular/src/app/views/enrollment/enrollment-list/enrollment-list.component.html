@@ -1,0 +1,54 @@
+<div class="container-fluid px-4">
+    <form>
+      
+      <div class="mb-3 row px-4">
+        
+        <div class="col-xs-3 col-md-8 d-flex">
+          <h3>Enrollees</h3>
+        </div>
+          <label for="table-complete-search" class="col-xs-3 col-sm-auto col-form-label">Search</label>
+          <div class="col-xs-3 col-sm-auto">
+            <input id="table-complete-search" type="text" class="form-control" name="searchTerm">
+          </div>
+        </div>
+  
+        <div class="container px-1">
+          <div class="row g-3 my-2">
+            
+        </div>
+      </div>
+  
+      <hr>   
+        <table class="table table-borderless table-responsive bg-white card-1 rounded shadow-sm table-striped table-responsive">
+          <thead>
+          <tr class="border-bottom">
+            <th scope="col" sortable="name">LTO Portal ID</th>
+            <th scope="col" sortable="name">Student Name</th>
+            <th scope="col" sortable="name">Instructor</th>
+            <th scope="col" sortable="name">Course</th>
+            <th scope="col" sortable="name">Status</th>
+            <th scope="col" sortable="name">Action</th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>LTO-123-123123</td>
+              <td>John  Dog  Doe	</td>
+              <td>Jane John Doe		</td>
+              <td>Practical Driving Course</td>
+              <td>Graudated</td>
+              <td>
+                <div class="p-2 icons">
+                  <button data-bs-toggle="modal" data-bs-target="#enrollment-form-modal" class="btn btn-primary btn-sm" >
+                    Assessment
+                  </button>      
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </form>
+  </div>
+  
+  
+  

@@ -13,6 +13,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalModule } from "ngx-bootstrap/modal";
 import { CourseListComponent } from './views/course/course-list/course-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { CourseFormComponent } from './views/course/course-form/course-form.component';
+import { EnrollmentListComponent } from './views/enrollment/enrollment-list/enrollment-list.component';
+import { InstructorFormComponent } from './views/instructor/instructor-form/instructor-form.component';
+import { ToastrModule } from 'ngx-toastr';
+import { StudentDetailsComponent } from './views/student/student-details/student-details.component';
+import { InstuctorDetailsComponent } from './views/instructor/instuctor-details/instuctor-details.component';
+import { EnrollmentFormComponent } from './views/enrollment/enrollment-form/enrollment-form.component';
+import  {  PdfViewerModule  }  from  'ng2-pdf-viewer';
+import { CertificatesComponent } from './views/certificate/certificates/certificates.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +33,15 @@ import { HttpClientModule } from '@angular/common/http';
     StudentListComponent,
     InstructorListComponent,
     DefaultHeaderComponent,
-    CourseListComponent
+    CourseListComponent,
+    DashboardComponent,
+    CourseFormComponent,
+    EnrollmentListComponent,
+    InstructorFormComponent,
+    StudentDetailsComponent,
+    InstuctorDetailsComponent,
+    EnrollmentFormComponent,
+    CertificatesComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +50,9 @@ import { HttpClientModule } from '@angular/common/http';
     NgbModule,
     BrowserAnimationsModule,
     ModalModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot(),
+    PdfViewerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,219 @@
+<form #form="ngForm" (ngSubmit) = "onSubmit(form)">
+    <input type="hidden" class="formControl" id="id"
+        [(ngModel)]="instructorService.formData.instId" name="id">
+       <div class="row">
+           <div class="col-md-12 mt-3">
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" class="form-control" id="instFirstName"
+                        [(ngModel)] = "instructorService.formData.instFirstName"
+                        #instFirstName="ngModel" name="instFirstName" autocomplete="off" required> 
+                    <div class="empty-validation" *ngIf="instFirstName.invalid && instFirstName.touched">
+                        This is a required field
+                    </div>   
+                </div>
+            </div>
+            
+            <div class="col-md-12 mt-3">
+                <div class="form-group">
+                    <label>Middle Name</label>
+                    <input type="text" class="form-control" id="instMiddleName"
+                        [(ngModel)] = "instructorService.formData.instMiddleName"
+                        #instMiddleName="ngModel" name="instMiddleName" autocomplete="off" required> 
+                     <div class="empty-validation" *ngIf="instMiddleName.invalid && instMiddleName.touched">
+                        This is a required field
+                     </div>   
+                </div>
+            </div>   
+  
+            <div class="row mt-3">
+                <div class="col-md-9">
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control" id="instLastName"
+                            [(ngModel)] = "instructorService.formData.instLastName"
+                            #instLastName="ngModel" name="instLastName" autocomplete="off" required> 
+                         <div class="empty-validation" *ngIf="instLastName.invalid && instLastName.touched">
+                            This is a required field
+                         </div>   
+                    </div>
+                </div>   
+  
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Suffix</label>
+                        <input type="text" class="form-control" id="instSuffix"
+                            [(ngModel)] = "instructorService.formData.instSuffix"
+                            #instSuffix="ngModel" name="instSuffix" autocomplete="off">
+                    </div>
+                </div>   
+            </div>
+            
+            <div class="row mt-3">
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Instructor Accreditation Number</label>
+                        <input type="text" class="form-control" id="instAccredNo"
+                            [(ngModel)] = "instructorService.formData.instAccredNo"
+                            #instAccredNo="ngModel" name="instAccredNo" autocomplete="off" required> 
+                         <div class="empty-validation" *ngIf="instAccredNo.invalid && instAccredNo.touched">
+                            This is a required field
+                         </div>   
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>LTO Portal ID</label>
+                        <input type="text" class="form-control" id="instLtoPortalId"
+                            [(ngModel)] = "instructorService.formData.instLtoPid"
+                            #instLtoPid="ngModel" name="lto_portal_id" autocomplete="off" required> 
+                         <div class="empty-validation" *ngIf="instLtoPid.invalid && instLtoPid.touched">
+                            This is a required field
+                         </div>   
+                    </div>
+                </div>
+  
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Driver's License Number</label>
+                        <input type="text" class="form-control" id="instDln"
+                            [(ngModel)] = "instructorService.formData.instDln"
+                            #instDln="ngModel" name="instDln" autocomplete="off" required> 
+                         <div class="empty-validation" *ngIf="instDln.invalid && instDln.touched">
+                            This is a required field
+                         </div>   
+                    </div>        
+                </div>
+            </div>
+
+             <div class="row mt-3">
+
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>LTO Portal ID</label>
+                        <input type="text" class="form-control" id="instLtoPortalId"
+                            [(ngModel)] = "instructorService.formData.instLtoPid"
+                            #instLtoPid="ngModel" name="lto_portal_id" autocomplete="off" required> 
+                         <div class="empty-validation" *ngIf="instLtoPid.invalid && instLtoPid.touched">
+                            This is a required field
+                         </div>   
+                    </div>
+                </div>
+  
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Driver's License Number</label>
+                        <input type="text" class="form-control" id="instDln"
+                            [(ngModel)] = "instructorService.formData.instDln"
+                            #instDln="ngModel" name="instDln" autocomplete="off" required> 
+                         <div class="empty-validation" *ngIf="instDln.invalid && instDln.touched">
+                            This is a required field
+                         </div>   
+                    </div>        
+                </div>
+            </div>
+  
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Contact Number</label>
+                        <input type="text" class="form-control" id="isntContactNo"
+                            [(ngModel)] = "instructorService.formData.instContactNo"
+                            #isntContactNo="ngModel" name="studContactNo" autocomplete="off" required> 
+                         <div class="empty-validation" *ngIf="isntContactNo.invalid && isntContactNo.touched">
+                            This is a required field
+                         </div>   
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-3">
+  
+              <div class="col-md-6">
+                <div class="form-group">
+                    <label>Region</label>
+                    <input type="text" class="form-control" id="instRegion"
+                        [(ngModel)] = "instructorService.formData.instRegion"
+                        #instRegion="ngModel" name="instRegion" autocomplete="off" required> 
+                     <div class="empty-validation" *ngIf="instRegion.invalid && instRegion.touched">
+                        This is a required field
+                     </div>   
+                </div>
+            </div>
+  
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Province</label>
+                        <input type="text" class="form-control" id="instProvince"
+                            [(ngModel)] = "instructorService.formData.instProvince"
+                            #instProvince="ngModel" name="studProvince" autocomplete="off" required> 
+                         <div class="empty-validation" *ngIf="instProvince.invalid && instProvince.touched">
+                            This is a required field
+                         </div>   
+                    </div>
+                </div>
+  
+            </div>
+  
+            <div class="row mt-3">
+              
+                <div class="col-md-6">
+                  <div class="form-group">
+                      <label>City/Municipality</label>
+                      <input type="text" class="form-control" id="instCity"
+                          [(ngModel)] = "instructorService.formData.instCity"
+                          #instCity="ngModel" name="instCity" autocomplete="off" required> 
+                      <div class="empty-validation" *ngIf="instCity.invalid && instCity.touched">
+                          This is a required field
+                      </div>   
+                  </div>
+              </div>
+  
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Barangay</label>
+                        <input type="text" class="form-control" id="instBrgy"
+                            [(ngModel)] = "instructorService.formData.instBrgy"
+                            #instBrgy="ngModel" name="BRGY_DISTRICT" autocomplete="off" required> 
+                         <div class="empty-validation" *ngIf="instBrgy.invalid && instBrgy.touched">
+                            This is a required field
+                         </div>   
+                    </div>
+                </div>
+  
+                <div class="col-md-6 mt-3">
+                  <div class="form-group">
+                      <label>Zip Code</label>
+                      <input type="text" class="form-control" id="instZipCode"
+                          [(ngModel)] = "instructorService.formData.instZipCode"
+                          #instZipCode="ngModel" name="studZipCode" autocomplete="off" required> 
+                       <div class="empty-validation" *ngIf="instZipCode.invalid && instZipCode.touched">
+                          This is a required field
+                       </div>   
+                  </div>            
+              </div>
+            </div>
+            
+          
+            <div class="form-group  mt-3">
+                <label>Address Line</label>
+                <input type="text" class="form-control" id="instAddressLine"
+                    [(ngModel)] = "instructorService.formData.instAddressLine"
+                    #instAddressLine="ngModel" name="instAddressLine" autocomplete="off" required> 
+                 <div class="empty-validation" *ngIf="instAddressLine.invalid && instAddressLine.touched">
+                    This is a required field
+                 </div>   
+            </div>
+  
+       </div>
+        
+        <div class="mt-5 modal-footer">
+            <button class="btn btn-success" style="margin-right: 10px" [disabled]="form.invalid" data-bs-dismiss="modal">Save</button>
+            <button (click)="onReset()" class="btn btn-danger" type="reset" #reset data-bs-dismiss="modal">Cancel</button>
+        </div>
+  </form>
+  
+  

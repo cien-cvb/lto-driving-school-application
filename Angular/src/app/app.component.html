@@ -1,79 +1,84 @@
 <input class="visually-hidden" type="checkbox" id="check"> 
-<!-- Side bar -->
-<!-- <div class="d-flex sticky-top" id="wrapper">
-    <div class="bg-white sticky-top" id="sidebar-wrapper">
-    <div class="sidebar-heading text-center py-2 primary-text fs-4 fw-bold text-uppercase border-bottom"><img src="assets/img/icon (13).svg" alt="" style="height: 40px"></div>
-    <div class="list-group list-group-flush my-3">
-        <a [routerLink]="['/students']" class="list-group-item list-group-item-action bg-transparent second-text active"><i
-                class="fas fa-tachometer-alt me-2"><img src="assets/img/reading-book.png" alt="" style="width: 30px;"></i>&nbsp; &nbsp; Students</a>
-        <a [routerLink]="['/instructors']" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                class="fas fa-project-diagram me-2"><img src="assets/img/person-chalkboard-solid.svg" alt="" style="width: 30px;"></i>&nbsp; &nbsp; Instructors</a>
-        <a [routerLink]="['/courses']" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                class="fas fa-chart-line me-2"><img src="assets/img/car-solid.svg" alt="" style="width: 30px;"></i>&nbsp; &nbsp; Courses</a>
-        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                class="fas fa-paperclip me-2"><img src="assets/img/graduation-cap-solid.svg" alt="" style="width: 30px;"></i>&nbsp; &nbsp; Certificates</a>
-        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                class="fas fa-shopping-cart me-2"><img src="assets/img/icons8-report-card-48.png" alt="" style="width: 30px;"></i>&nbsp; &nbsp; Reports</a>
+
+  <!-- Student Form Modal -->
+  <div class="modal fade" id="student-form-modal"  data-bs-backdrop="static" tabindex="-1" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Student Form</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <app-student-form></app-student-form>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 
-<div id="page-content-wrapper px-4">
-    
-    <nav class="navbar navbar-expand-lg navbar-light mb-5" style="background-color: rgb(41,98,255);">
-        <div class="d-flex align-items-center justify-content-between">
-            <label for="check">
-                <i class="chevronIcon" id="menu-toggle">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-                    </svg>  
-                </i>
-            </label>
+   <!-- Course Form Modal -->
+   <div class="modal fade" id="course-form-modal" data-bs-backdrop="static" tabindex="-1" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Course Form</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <i><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
-                <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
-            </svg></i>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="color: white;">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
-                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-user me-2"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-                        </svg></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="#">Logout</a></li>
-                    </ul>
-                </li>
-            </ul>
+        <div class="modal-body">
+            <app-course-form></app-course-form>
         </div>
-    </nav> -->
-    <!-- <router-outlet></router-outlet> -->
-<!-- </div> -->
+      </div>
+    </div>
+  </div>
 
+  <!-- Instructor Form Modal -->
+  <div class="modal fade" id="instructor-form-modal" tabindex="-1" data-bs-backdrop="static" tabindex="-1" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Instructor Form</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <app-instructor-form></app-instructor-form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Enrollment Form Modal -->
+  <div class="modal fade" id="enrollment-form-modal" tabindex="-1" data-bs-backdrop="static" tabindex="-1" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Assesment Form</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <app-enrollment-form></app-enrollment-form>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <div class="d-flex" id="wrapper">
     <!-- Sidebar -->
-    <div class="bg-white" id="sidebar-wrapper">
+    <div id="sidebar-wrapper" class="shadow bg-body rounded">
         <div class="sidebar-heading text-center py-2 primary-text fs-4 fw-bold text-uppercase border-bottom"><img src="assets/img/icon (13).svg" alt="" style="height: 40px"></div>
         <div class="list-group list-group-flush my-3">
-            <a [routerLink]="['/students']" class="list-group-item list-group-item-action bg-transparent second-text active"><i
-                class="fas fa-tachometer-alt me-2"><img src="assets/img/reading-book.png" alt="" style="width: 30px;"></i>&nbsp; &nbsp; Students</a>
-        <a [routerLink]="['/instructors']" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+            <a [routerLink]="['/dashboard']" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+                class="fas fa-tachometer-alt me-2"><img src="assets/img/gauge-solid.svg" alt="" style="width: 30px;"></i>&nbsp; &nbsp; Dashboard</a>
+                <a [routerLink]="['/students']" class="list-group-item list-group-item-action bg-transparent second-text active">
+                  <i
+                  class="fas fa-tachometer-alt me-2"><img src="assets/img/reading-book.png" alt="" style="width: 30px;"></i>&nbsp; &nbsp; Students</a>
+                <a [routerLink]="['/enrollment']" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+                    class="fas fa-tachometer-alt me-2"><img src="assets/img/sign-up.png" alt="" style="width: 30px;"></i>&nbsp; &nbsp; Enrollees</a>
+                    <a [routerLink]="['/certificates']" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                      class="fas fa-paperclip me-2"><img src="assets/img/graduation-cap-solid.svg" alt="" style="width: 30px;"></i>&nbsp; &nbsp; Certificates</a>
+                    <a [routerLink]="['/instructors']" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                 class="fas fa-project-diagram me-2"><img src="assets/img/person-chalkboard-solid.svg" alt="" style="width: 30px;"></i>&nbsp; &nbsp; Instructors</a>
         <a [routerLink]="['/courses']" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                 class="fas fa-chart-line me-2"><img src="assets/img/car-solid.svg" alt="" style="width: 30px;"></i>&nbsp; &nbsp; Courses</a>
-        <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                class="fas fa-paperclip me-2"><img src="assets/img/graduation-cap-solid.svg" alt="" style="width: 30px;"></i>&nbsp; &nbsp; Certificates</a>
+        
         <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                 class="fas fa-shopping-cart me-2"><img src="assets/img/icons8-report-card-48.png" alt="" style="width: 30px;"></i>&nbsp; &nbsp; Reports</a>
         </div>

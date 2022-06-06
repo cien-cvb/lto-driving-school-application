@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Student } from 'src/app/models/student';
 import { StudentService } from 'src/app/services/student.service';
-
 
 @Component({
   selector: 'app-student-list',
@@ -10,9 +10,11 @@ import { StudentService } from 'src/app/services/student.service';
 })
 export class StudentListComponent implements OnInit {
 
-  students!: Student[];
+  id: number;
+  students: Student[];
+  student: Student;
 
-  constructor(private studentService: StudentService) {
+  constructor(private studentService: StudentService, private router: Router) {
     
   }
 
@@ -28,8 +30,11 @@ export class StudentListComponent implements OnInit {
     this.studentService.getStudentList().subscribe(res => {
       this.students = res;
       console.log(this.students);
-    });
-   
+    });  
+  }
+
+  onViewStudentDetails(id: number){
+     this.router.navigate(['student-details', id])
   }
 
 }

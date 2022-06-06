@@ -1,331 +1,262 @@
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Open modal for @mdo</button>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat">Open modal for @fat</button>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Open modal for @getbootstrap</button>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Recipient:</label>
-            <input type="text" class="form-control" id="recipient-name">
+<form #form="ngForm" (ngSubmit) = "onSubmit(form)">
+  <input type="hidden" class="formControl" id="id"
+      [(ngModel)]="studentService.formData.studID" name="id">
+     <div class="row">
+         <div class="col-md-12 mt-3">
+              <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" class="form-control" id="studFirstName"
+                      [(ngModel)] = "studentService.formData.studFirstName"
+                      #studFirstName="ngModel" name="studFirstName" autocomplete="off" required> 
+                  <div class="empty-validation" *ngIf="studFirstName.invalid && studFirstName.touched">
+                      This is a required field
+                  </div>   
+              </div>
           </div>
-          <div class="mb-3">
-            <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="message-text"></textarea>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Send message</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- 
-    <div class="container student-form-body">
-        <form>
-            <div class="row">
-              <h5>Name</h5>
-              <div class="col-md-12">
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label"><span class="required-indicator">*</span> Last name</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
+          
+          <div class="col-md-12 mt-3">
+              <div class="form-group">
+                  <label>Middle Name</label>
+                  <input type="text" class="form-control" id="studMiddleName"
+                      [(ngModel)] = "studentService.formData.studMiddleName"
+                      #studMiddleName="ngModel" name="studMiddleName" autocomplete="off" required> 
+                   <div class="empty-validation" *ngIf="studMiddleName.invalid && studMiddleName.touched">
+                      This is a required field
+                   </div>   
               </div>
-              <div class="col-md-12">
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label"><span class="required-indicator">*</span> First Name</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-9">
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label"><span class="required-indicator">*</span> Middle Name</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Suffix</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <h5>Address</h5>
-              <div class="col-md-6">
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label"><span class="required-indicator">*</span> Region</label>
-                  <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label"><span class="required-indicator">*</span> Province</label>
-                  <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label"><span class="required-indicator">*</span> City</label>
-                  <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label"><span class="required-indicator">*</span> Barangay</label>
-                  <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label"><span class="required-indicator">*</span> Address Line</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-            <hr>
-            <div class="mb-3">
-              <h6>Driver's License Number</h6>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-              <h6><span class="required-indicator">*</span> Date of Birth</h6>
-              <input id="birthdate" class="form-control" type="date" />
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="mb-3">
-                 <h6><span class="required-indicator">*</span> Gender</h6>
-                  <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="mb-3">
-                  <h6><span class="required-indicator">*</span> Marital Status</h6>
-                  <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <hr>
-            <div class="mb-3">
-              <h5>Upload Documents</h5>
-            </div>
-            <div class="mb-3">
-              <label for="formFileSm" class="form-label">Supporting Document 1</label>
-              <input class="form-control form-control-sm" id="formFileSm" type="file">
-            </div>
-            <div class="mb-3">
-              <label for="formFileSm" class="form-label">Supporting Document 2</label>
-              <input class="form-control form-control-sm" id="formFileSm" type="file">
-            </div>
-            <div class="mb-3">
-              <label for="formFileSm" class="form-label">Supporting Document 3</label>
-              <input class="form-control form-control-sm" id="formFileSm" type="file">
-            </div>
-            <div class="d-flex justify-content-end">
-              <div class="mt-4 me-2"><button type="submit" class="btn btn-primary">Save</button></div>
-              <div class="mt-4"><button type="submit" class="btn btn-danger">Cancel</button></div>
-            </div>
-            
-            
-          </form>
-    </div>
+          </div>   
 
- -->
-<!-- Button trigger modal -->
-<!-- <div class="modal-content">
-	<div class="modal-header">
-		<h6 class="circularBold signUpHeading">Sign In</h6>
-		<button
-            type="button"
-            class="close"
-            aria-label="Close"
-            data-dismiss="modal"
-          >
-            <span aria-hidden="true">&times;</span>
-          </button>
-	</div>
-	<div class="modal-body">
-		<form>
-            <div class="row">
-              <h5>Name</h5>
-              <div class="col-md-12">
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label"><span class="required-indicator">*</span> Last name</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label"><span class="required-indicator">*</span> First Name</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
-              </div>
-            </div>
-            <div class="row">
+          <div class="row mt-3">
               <div class="col-md-9">
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label"><span class="required-indicator">*</span> Middle Name</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
-              </div>
+                  <div class="form-group">
+                      <label>Last Name</label>
+                      <input type="text" class="form-control" id="studLastName"
+                          [(ngModel)] = "studentService.formData.studLastName"
+                          #studLastName="ngModel" name="studLastname" autocomplete="off" required> 
+                       <div class="empty-validation" *ngIf="studLastName.invalid && studLastName.touched">
+                          This is a required field
+                       </div>   
+                  </div>
+              </div>   
+
               <div class="col-md-3">
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Suffix</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <h5>Address</h5>
+                  <div class="form-group">
+                      <label>Suffix</label>
+                      <input type="text" class="form-control" id="studSuffix"
+                          [(ngModel)] = "studentService.formData.studSuffix"
+                          #studSuffix="ngModel" name="studSuffix" autocomplete="off">
+                  </div>
+              </div>   
+          </div>
+          
+          <div class="row mt-3">
               <div class="col-md-6">
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label"><span class="required-indicator">*</span> Region</label>
-                  <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
+                  <div class="form-group">
+                      <label>Gender</label>
+                      <select class="form-select form-select-sm" id="studGender"
+                          [(ngModel)] = "studentService.formData.studGender"
+                          #studGender="ngModel" name="studGender" required>
+                          <option value="Male">Male</option>
+                          <option value="Female">Female</option>
+                      </select>
+                       <div class="empty-validation" *ngIf="studGender.invalid && studGender.touched">
+                          This is a required field
+                       </div>   
+                  </div>
               </div>
+
               <div class="col-md-6">
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label"><span class="required-indicator">*</span> Province</label>
-                  <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
+                  
+                  <div class="form-group">
+                      <label>Date of Birth</label>
+                      <input id="birthdate" class="form-control" type="date" id="studDob"
+                          [(ngModel)] = "studentService.formData.studDob"
+                          #studDob="ngModel" name="studDob" required/>
+                      <!-- <input type="text" class="form-control" id="DATE_OF_BIRTH"
+                          [(ngModel)] = "studentService.formData.DATE_OF_BIRTH"
+                          #DATE_OF_BIRTH="ngModel" name="DATE_OF_BIRTH" autocomplete="off" required>  -->
+                       <div class="empty-validation" *ngIf="studDob.invalid && studDob.touched">
+                          This is a required field
+                       </div>   
+                  </div>
               </div>
-            </div>
-            <div class="row">
+          </div>
+
+          <div class="row mt-3">
               <div class="col-md-6">
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label"><span class="required-indicator">*</span> City</label>
-                  <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
+                  <div class="form-group">
+                      <label>Marital Status</label>
+                      <select class="form-select form-select-sm" id="studMaritalStatus"
+                      [(ngModel)] = "studentService.formData.studMaritalStatus"
+                      #studMaritalStatus="ngModel" name="studMaritalStatus" required>
+                          <option value="Single">Single</option>
+                          <option value="Married">Married</option>
+                          <option value="Widowed">Widowed</option>
+                      </select>
+                       <div class="empty-validation" *ngIf="studMaritalStatus.invalid && studMaritalStatus.touched">
+                          This is a required field
+                       </div>   
+                  </div>
               </div>
+
               <div class="col-md-6">
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label"><span class="required-indicator">*</span> Barangay</label>
-                  <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
+                  <div class="form-group">
+                      <label>Nationality</label>
+                      <input type="text" class="form-control" id="studNationality"
+                          [(ngModel)] = "studentService.formData.studNationality"
+                          #studNationality="ngModel" name="nationality" autocomplete="off" required> 
+                       <div class="empty-validation" *ngIf="studNationality.invalid && studNationality.touched">
+                          This is a required field
+                       </div>   
+                  </div>
               </div>
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label"><span class="required-indicator">*</span> Address Line</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-            <hr>
-            <div class="mb-3">
-              <h6>Driver's License Number</h6>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-              <h6><span class="required-indicator">*</span> Date of Birth</h6>
-              <input id="birthdate" class="form-control" type="date" />
-            </div>
-            <div class="row">
+          </div>
+
+          <div class="row mt-3">
               <div class="col-md-6">
-                <div class="mb-3">
-                 <h6><span class="required-indicator">*</span> Gender</h6>
-                  <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
+                  <div class="form-group">
+                      <label>LTO Portal ID</label>
+                      <input type="text" class="form-control" id="studLtoPortalId"
+                          [(ngModel)] = "studentService.formData.studLtoPortalId"
+                          #studLtoPortalId="ngModel" name="lto_portal_id" autocomplete="off" required> 
+                       <div class="empty-validation" *ngIf="studLtoPortalId.invalid && studLtoPortalId.touched">
+                          This is a required field
+                       </div>   
+                  </div>
               </div>
+
               <div class="col-md-6">
-                <div class="mb-3">
-                  <h6><span class="required-indicator">*</span> Marital Status</h6>
-                  <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
+                  <div class="form-group">
+                      <label>Driver's License Number</label>
+                      <input type="text" class="form-control" id="studDln"
+                          [(ngModel)] = "studentService.formData.studDln"
+                          #studDln="ngModel" name="studDln" autocomplete="off" required> 
+                       <div class="empty-validation" *ngIf="studDln.invalid && studDln.touched">
+                          This is a required field
+                       </div>   
+                  </div>        
               </div>
+          </div>
+
+          <div class="row mt-3">
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label>Contact Number</label>
+                      <input type="text" class="form-control" id="studContactNo"
+                          [(ngModel)] = "studentService.formData.studContactNo"
+                          #studContactNo="ngModel" name="studContactNo" autocomplete="off" required> 
+                       <div class="empty-validation" *ngIf="studContactNo.invalid && studContactNo.touched">
+                          This is a required field
+                       </div>   
+                  </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="text" class="form-control" id="studEmail"
+                        [(ngModel)] = "studentService.formData.studEmail"
+                        #studEmail="ngModel" name="studEmail" autocomplete="off" required> 
+                     <div class="empty-validation" *ngIf="studEmail.invalid && studEmail.touched">
+                        This is a required field
+                     </div>   
+                </div>
             </div>
-            <hr>
-            <div class="mb-3">
-              <h5>Upload Documents</h5>
-            </div>
-            <div class="mb-3">
-              <label for="formFileSm" class="form-label">Supporting Document 1</label>
-              <input class="form-control form-control-sm" id="formFileSm" type="file">
-            </div>
-            <div class="mb-3">
-              <label for="formFileSm" class="form-label">Supporting Document 2</label>
-              <input class="form-control form-control-sm" id="formFileSm" type="file">
-            </div>
-            <div class="mb-3">
-              <label for="formFileSm" class="form-label">Supporting Document 3</label>
-              <input class="form-control form-control-sm" id="formFileSm" type="file">
-            </div>
-            <div class="d-flex justify-content-end">
-              <div class="mt-4 me-2"><button type="submit" class="btn btn-primary">Save</button></div>
-              <div class="mt-4"><button type="submit" class="btn btn-danger">Cancel</button></div>
-            </div>
+
+          </div>
+          
+          <div class="row mt-3">
+
+            <div class="col-md-6">
+              <div class="form-group">
+                  <label>Region</label>
+                  <input type="text" class="form-control" id="studRegion"
+                      [(ngModel)] = "studentService.formData.studRegion"
+                      #studRegion="ngModel" name="studRegion" autocomplete="off" required> 
+                   <div class="empty-validation" *ngIf="studRegion.invalid && studRegion.touched">
+                      This is a required field
+                   </div>   
+              </div>
+          </div>
+
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label>Province</label>
+                      <input type="text" class="form-control" id="studProvince"
+                          [(ngModel)] = "studentService.formData.studProvince"
+                          #studProvince="ngModel" name="studProvince" autocomplete="off" required> 
+                       <div class="empty-validation" *ngIf="studProvince.invalid && studProvince.touched">
+                          This is a required field
+                       </div>   
+                  </div>
+              </div>
+
+          </div>
+
+          <div class="row mt-3">
             
-            
-          </form>
-	</div>
-</div> -->
+              <div class="col-md-6">
+                <div class="form-group">
+                    <label>City/Municipality</label>
+                    <input type="text" class="form-control" id="studCity"
+                        [(ngModel)] = "studentService.formData.studCity"
+                        #studCity="ngModel" name="studCity" autocomplete="off" required> 
+                    <div class="empty-validation" *ngIf="studCity.invalid && studCity.touched">
+                        This is a required field
+                    </div>   
+                </div>
+            </div>
+
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label>Barangay</label>
+                      <input type="text" class="form-control" id="studBrgy"
+                          [(ngModel)] = "studentService.formData.studBrgy"
+                          #studBrgy="ngModel" name="BRGY_DISTRICT" autocomplete="off" required> 
+                       <div class="empty-validation" *ngIf="studBrgy.invalid && studBrgy.touched">
+                          This is a required field
+                       </div>   
+                  </div>
+              </div>
+
+              <div class="col-md-6 mt-3">
+                <div class="form-group">
+                    <label>Zip Code</label>
+                    <input type="text" class="form-control" id="studZipCode"
+                        [(ngModel)] = "studentService.formData.studZipCode"
+                        #studZipCode="ngModel" name="studZipCode" autocomplete="off" required> 
+                     <div class="empty-validation" *ngIf="studZipCode.invalid && studZipCode.touched">
+                        This is a required field
+                     </div>   
+                </div>            
+            </div>
+          </div>
+          
+          <div class="form-group  mt-3">
+              <label>Address Line</label>
+              <input type="text" class="form-control" id="studAddressLine"
+                  [(ngModel)] = "studentService.formData.studAddressLine"
+                  #studAddressLine="ngModel" name="studAddressLine" autocomplete="off" required> 
+               <div class="empty-validation" *ngIf="studAddressLine.invalid && studAddressLine.touched">
+                  This is a required field
+               </div>   
+          </div>
+
+          <div class="mb-3 mt-3">
+            <label for="formFileSm" class="form-label">Upload Attachment</label>
+            <input class="form-control form-control-sm" id="formFileSm" type="file">
+          </div>
+
+          <div class="mb-3 mt-3">
+            <label for="formFileSm" class="form-label">Upload Attachment</label>
+            <input class="form-control form-control-sm" id="formFileSm" type="file">
+          </div>
+
+     </div>
+      
+      <div class="mt-5 modal-footer">
+          <button class="btn btn-success" style="margin-right: 10px" [disabled]="form.invalid" data-bs-dismiss="modal">Save</button>
+          <button (click)="onReset()" class="btn btn-danger" type="reset" #reset data-bs-dismiss="modal">Cancel</button>
+      </div>
+</form>
+

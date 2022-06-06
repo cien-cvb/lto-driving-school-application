@@ -1,0 +1,66 @@
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">Instructor Details</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <app-instructor-form></app-instructor-form>
+  </div>
+</div>
+
+<div class="container-fluid px-4">
+  <form>
+    
+    <div class="mb-3 row px-4">
+      
+      <div class="col-xs-3 col-md-8 d-flex">
+        <h3>Instructor</h3>
+          <button data-bs-toggle="modal" data-bs-target="#instructor-form-modal" class="btn btn-primary add-button"><i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+            <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+            <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+          </svg></i></button>
+      </div>
+        <label for="table-complete-search" class="col-xs-3 col-sm-auto col-form-label">Search</label>
+        <div class="col-xs-3 col-sm-auto">
+          <input id="table-complete-search" type="text" class="form-control" name="searchTerm">
+        </div>
+      </div>
+
+      <div class="container px-1">
+        <div class="row g-3 my-2">
+          
+      </div>
+    </div>
+  
+    <hr>   
+    <table class="table table-borderless table-responsive bg-white card-1 rounded shadow-sm table-striped table-responsive">
+      <thead>
+      <tr class="border-bottom">
+        <th scope="col" sortable="name">Instructor ID</th>
+        <th scope="col" sortable="name">Instructor Accreditation Number</th>
+        <th scope="col" sortable="name">Name</th>
+        <th scope="col" sortable="name">Email Address</th>
+        <th scope="col" sortable="name">Contact Number</th>
+        <th scope="col" sortable="name">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let instructor of instructors">
+          <td>{{ instructor.instId }}</td>
+          <td>{{ instructor.instAccredNo }}</td>
+          <td>{{ instructor.instFirstName }}&nbsp;{{ instructor.instMiddleName }}&nbsp;{{ instructor.instLastName }}</td>
+          <td>{{ instructor.instEmail }}</td>
+          <td>{{ instructor.instContactNo }}</td>
+          <td>
+            <div class="p-2 icons">
+              <button class="btn btn-primary btn-sm" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                View Full Details
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</div>
+

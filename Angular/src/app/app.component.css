@@ -21,16 +21,15 @@
   }
   
   #wrapper {
-    color: rgb(62,85,105);
     overflow-x: hidden;
     margin-left: 0px;
-    background-color: rgb(238,245,249);
     transition: all 0.3s ease-in-out;
   }
   
   #sidebar-wrapper {
     min-height: 100vh;
     margin-left: -250px;
+
     -webkit-transition: margin 0.25s ease-out;
     -moz-transition: margin 0.25s ease-out;
     -o-transition: margin 0.25s ease-out;
@@ -100,7 +99,7 @@
 }
 
 .sidebar-heading{
-    background-color: whitesmoke;
+    background-color: rgb(255, 255, 255);
     height: 58.9px;
 }
 
@@ -108,7 +107,7 @@
 
   
 
-   :root {
+   /* :root {
     --main-bg-color: #009d63;
     --main-text-color: #009d63;
     --second-text-color: #bbbec5;
@@ -202,4 +201,4 @@
     #wrapper.toggled #sidebar-wrapper {
       margin-left: -15rem;
     }
-  }
+  } */

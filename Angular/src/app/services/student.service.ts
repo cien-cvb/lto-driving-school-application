@@ -9,10 +9,10 @@ import { Student } from 'src/app/models/student';
 
 export class StudentService {
 
-  formData!: Student;
+  formData: Student;
 
-  private baseUrl = "http://localhost:55891/api/student";
-
+  private baseURL = "https://localhost:5001";
+  private studURL = this.baseURL + "/api/student";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -23,7 +23,21 @@ export class StudentService {
   }
 
   getStudentList(): Observable<Student[]>{
-    return this.httpClient.get<Student[]>(`${this.baseUrl}`)
+    return this.httpClient.get<Student[]>(`${this.studURL}`)
+  }
+
+  getStudentByID(id: number): Observable<Student>{
+    return this.httpClient.get<Student>(`${this.studURL}/${id}`);
+  }
+
+  createStudent(student: Student): Observable<Object>{
+    return this.httpClient
+    .post(`${this.studURL}`, student)
+    .pipe(
+      tap(() => {
+        this.refreshNeeded$.next();
+      })
+    );
   }
 
 }
