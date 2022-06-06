@@ -44,24 +44,24 @@ namespace DrivingSchoolEnrollmentSystem.Controllers
         }
 
         [HttpPost]
-        public JsonResult Insert(Users users)
-        {
-            DataSet DS = new DataSet();
-            string connString = _configuration.GetConnectionString("ConnectionString");
-            sqlHelper = new SQLHelper();
-            sqlHelper.ConnString = connString;
+        //public JsonResult Insert(Users users)
+        //{
+        //    DataSet DS = new DataSet();
+        //    string connString = _configuration.GetConnectionString("ConnectionString");
+        //    sqlHelper = new SQLHelper();
+        //    sqlHelper.ConnString = connString;
 
-            sqlHelper.APCommandType = CommandType.StoredProcedure;
-            sqlHelper.APCommandText = "dbo.spUsers";
-            sqlHelper.AddParameter("@UserName", users.CourseName);
-            sqlHelper.AddParameter("@UserTypeID", users.CourseType);
-            sqlHelper.AddParameter("@UserName", users.CourseHours);
+        //    sqlHelper.APCommandType = CommandType.StoredProcedure;
+        //    sqlHelper.APCommandText = "dbo.spUsers";
+        //    sqlHelper.AddParameter("@UserName", users.CourseName);
+        //    sqlHelper.AddParameter("@UserTypeID", users.CourseType);
+        //    sqlHelper.AddParameter("@UserName", users.CourseHours);
 
-            sqlHelper.AddParameter("@action", "Insert");
-            DS = sqlHelper.GetDataSet();
+        //    sqlHelper.AddParameter("@action", "Insert");
+        //    DS = sqlHelper.GetDataSet();
 
-            return new JsonResult("Course: " + course.CourseName + " Added Successfully");
-        }
+        //    return new JsonResult("Course: " + course.CourseName + " Added Successfully");
+        //}
 
         [HttpPut]
         public JsonResult Update(Course course)

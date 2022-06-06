@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\H2\\Documents\\Benjie Castelo\\Visual Studio\\DrivingSchoolEnrollmentSystem\\DrivingSchoolEnrollmentSystem\\DrivingSchoolEnrollmentSystem.csproj": {}
+    "C:\\Users\\Cien\\Documents\\projects\\lto-driving-school-application\\DrivingSchoolEnrollmentSystem\\DrivingSchoolEnrollmentSystem\\DrivingSchoolEnrollmentSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\H2\\Documents\\Benjie Castelo\\Visual Studio\\DrivingSchoolEnrollmentSystem\\DrivingSchoolEnrollmentSystem\\DrivingSchoolEnrollmentSystem.csproj": {
+    "C:\\Users\\Cien\\Documents\\projects\\lto-driving-school-application\\DrivingSchoolEnrollmentSystem\\DrivingSchoolEnrollmentSystem\\DrivingSchoolEnrollmentSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\H2\\Documents\\Benjie Castelo\\Visual Studio\\DrivingSchoolEnrollmentSystem\\DrivingSchoolEnrollmentSystem\\DrivingSchoolEnrollmentSystem.csproj",
+        "projectUniqueName": "C:\\Users\\Cien\\Documents\\projects\\lto-driving-school-application\\DrivingSchoolEnrollmentSystem\\DrivingSchoolEnrollmentSystem\\DrivingSchoolEnrollmentSystem.csproj",
         "projectName": "DrivingSchoolEnrollmentSystem",
-        "projectPath": "C:\\Users\\H2\\Documents\\Benjie Castelo\\Visual Studio\\DrivingSchoolEnrollmentSystem\\DrivingSchoolEnrollmentSystem\\DrivingSchoolEnrollmentSystem.csproj",
-        "packagesPath": "C:\\Users\\H2\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\H2\\Documents\\Benjie Castelo\\Visual Studio\\DrivingSchoolEnrollmentSystem\\DrivingSchoolEnrollmentSystem\\obj\\",
+        "projectPath": "C:\\Users\\Cien\\Documents\\projects\\lto-driving-school-application\\DrivingSchoolEnrollmentSystem\\DrivingSchoolEnrollmentSystem\\DrivingSchoolEnrollmentSystem.csproj",
+        "packagesPath": "C:\\Users\\Cien\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Cien\\Documents\\projects\\lto-driving-school-application\\DrivingSchoolEnrollmentSystem\\DrivingSchoolEnrollmentSystem\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\H2\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Cien\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -71,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

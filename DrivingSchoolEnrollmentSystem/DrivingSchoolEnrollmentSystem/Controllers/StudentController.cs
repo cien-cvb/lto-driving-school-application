@@ -39,7 +39,7 @@ namespace DrivingSchoolEnrollmentSystem.Controllers
             sqlHelper = new SQLHelper();
             sqlHelper.ConnString = connString;
 
-            sqlHelper.APCommandText = "SELECT * FROM [dbo].[Student] WHERE DeleteFlag = 0 ORDER BY LastName ASC";
+            sqlHelper.APCommandText = "SELECT * FROM [dbo].[Student] WHERE DeleteFlag = 0 ORDER BY StudentID ASC";
             DT = sqlHelper.GetDataTable();
 
             return new JsonResult(DT);
@@ -65,7 +65,7 @@ namespace DrivingSchoolEnrollmentSystem.Controllers
             sqlHelper.AddParameter("@Nationality", student.Nationality);
             sqlHelper.AddParameter("@Gender", student.Gender);
             sqlHelper.AddParameter("@MaritalStatus", student.MaritalStatus);
-            sqlHelper.AddParameter("@BirthDate", student.BirthDate);
+            //sqlHelper.AddParameter("@BirthDate", student.BirthDate);
             sqlHelper.AddParameter("@DriversLicenseNo", student.DriversLicenseNo);
 
             sqlHelper.AddParameter("@DateCreated", student.DateCreated);
@@ -73,7 +73,7 @@ namespace DrivingSchoolEnrollmentSystem.Controllers
 
             //Attachments
             sqlHelper.AddParameter("@ProfilePicture", student.ProfilePicture);
-            sqlHelper.AddParameter("@Attachments", student.Attachments);
+            sqlHelper.AddParameter("@Attachment", student.Attachments);
 
             //Fingerprints
             sqlHelper.AddParameter("@RightThumbTemplate", student.RightThumbTemplate);
