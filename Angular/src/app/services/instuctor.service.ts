@@ -10,7 +10,7 @@ export class InstuctorService {
 
   formData: Instructor;
 
-  private baseURL = "https://localhost:5001";
+  private baseURL = "https://drisitproapi.azurewebsites.net";
   private instURL = this.baseURL + "/api/instructor";
   
   constructor(private httpClient: HttpClient) { }

@@ -1,0 +1,18 @@
+
+<div class="container">
+  
+    <pdf-viewer [src]="doc" [render-text]="true" style="display: block;">
+    </pdf-viewer>
+    <ngx-extended-pdf-viewer
+            [src]="'src/assets/cert.pdf'"
+            [height]="'90%'"
+         
+            [textLayer]="true" 
+            [showHandToolButton]="true"
+            [showHandToolButton]="true"
+            [showPresentationModeButton]="true"
+            [(page)]="page"
+            [(pageLabel)]="pageLabel"
+            [showDownloadButton]="true"
+    > 
+    </ngx-extended-pdf-viewer>

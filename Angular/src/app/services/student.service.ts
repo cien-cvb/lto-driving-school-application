@@ -11,7 +11,7 @@ export class StudentService {
 
   formData: Student;
 
-  private baseURL = "https://localhost:5001";
+  private baseURL = "https://drisitproapi.azurewebsites.net";
   private studURL = this.baseURL + "/api/student";
 
   constructor(private httpClient: HttpClient) { }

@@ -26,6 +26,8 @@
     "jquery": "^3.6.0",
     "ng2-pdf-viewer": "^9.0.0",
     "ngx-bootstrap": "^8.0.0",
+    "ngx-extended-pdf-viewer": "^13.5.2",
+    "ngx-print": "^1.2.1",
     "ngx-toastr": "^14.3.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

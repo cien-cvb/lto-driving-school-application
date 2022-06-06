@@ -7,6 +7,9 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { EnrollmentListComponent } from './views/enrollment/enrollment-list/enrollment-list.component';
 import { StudentDetailsComponent } from './views/student/student-details/student-details.component';
 import { CertificatesComponent } from './views/certificate/certificates/certificates.component';
+import { PdfViewerComponent } from './views/pdf-viewer/pdf-viewer.component';
+import { LoginComponent } from './views/login/login.component';
+import { ReportsComponent } from './views/reports/reports.component';
 
 const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
@@ -16,7 +19,11 @@ const routes: Routes = [
   {path: 'courses', component: CourseListComponent},
   {path: 'enrollment', component: EnrollmentListComponent},
   {path: 'student-details/:id', component: StudentDetailsComponent},
-  {path: 'certificates', component: CertificatesComponent}
+  {path: 'certificates', component: CertificatesComponent},
+  {path: 'pdf-viewer', component: PdfViewerComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'reports', component: ReportsComponent}
+  
 ];
 
 @NgModule({

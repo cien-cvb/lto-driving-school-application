@@ -21,8 +21,13 @@ import { ToastrModule } from 'ngx-toastr';
 import { StudentDetailsComponent } from './views/student/student-details/student-details.component';
 import { InstuctorDetailsComponent } from './views/instructor/instuctor-details/instuctor-details.component';
 import { EnrollmentFormComponent } from './views/enrollment/enrollment-form/enrollment-form.component';
-import  {  PdfViewerModule  }  from  'ng2-pdf-viewer';
 import { CertificatesComponent } from './views/certificate/certificates/certificates.component';
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+import { PdfViewerComponent } from './views/pdf-viewer/pdf-viewer.component';
+import { NgxPrintModule } from 'ngx-print';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { LoginComponent } from './views/login/login.component';
+import { ReportsComponent } from './views/reports/reports.component';
 
 
 @NgModule({
@@ -42,6 +47,9 @@ import { CertificatesComponent } from './views/certificate/certificates/certific
     InstuctorDetailsComponent,
     EnrollmentFormComponent,
     CertificatesComponent,
+    PdfViewerComponent,
+    LoginComponent,
+    ReportsComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +60,10 @@ import { CertificatesComponent } from './views/certificate/certificates/certific
     ModalModule,
     HttpClientModule,
     ToastrModule.forRoot(),
+    NgxPrintModule,
+    NgxExtendedPdfViewerModule,
     PdfViewerModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

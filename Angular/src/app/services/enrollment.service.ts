@@ -10,7 +10,7 @@ export class EnrollmentService {
 
   formData: Enrollment;
 
-  private baseURL = "https://localhost:5001";
+  private baseURL = "https://drisitproapi.azurewebsites.net";
   private enrollmentURL = this.baseURL + "/api/enrollment";
   
   constructor(private httpClient: HttpClient) { }
